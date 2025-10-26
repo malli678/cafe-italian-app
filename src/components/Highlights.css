@@ -1,0 +1,95 @@
+/* src/components/Highlights.css */
+.highlights-section {
+    padding: 6rem 5%;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.highlights-header {
+    margin-bottom: 94px;
+    /* Vertical gap from Figma */
+}
+
+.highlights-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.highlights-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+/* This wrapper is key for the border effect */
+.title-text-wrapper {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    color: var(--color-accent);
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.title-text-wrapper:hover {
+    text-shadow: 0 0 6px var(--color-accent),
+                 0 0 2px var(--color-accent),
+                 0 0 0px var(--color-accent);
+    color: #fff; /* Optional: makes it brighter on hover */
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 64px;
+    /* Gap between cards from Figma */
+    text-align: left;
+}
+
+.highlight-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+}
+
+.highlight-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 31px;
+    /* Gap between image and text from Figma */
+}
+
+.highlight-name {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-price {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .highlights-grid {
+        grid-template-columns: 1fr;
+        /* 1 column for mobile */
+    }
+
+    .highlights-title {
+        font-size: 2.5rem;
+    }
+}

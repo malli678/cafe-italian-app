@@ -1,0 +1,112 @@
+/* === DINING SECTION === */
+.dining-section {
+  position: relative;
+  width: 100%;
+  min-height: 772px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 6rem 8%;
+  overflow: hidden;
+}
+
+/* Dark overlay over the background image */
+.dining-overlay {
+  position: absolute;
+  inset: 0;
+  background: #00000066; /* semi-transparent black */
+  z-index: 1;
+}
+
+/* Content box (frame) */
+.dining-content-box {
+  position: relative;
+  z-index: 2;
+  background: transparent; /* no black background */
+  color: #fff;
+  width: 649px;
+  max-width: 90%;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  box-shadow: none; /* remove shadow */
+}
+
+
+/* Subtitle */
+.dining-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d6b86b;
+}
+
+/* Title */
+.dining-title {
+  font-family: var(--font-primary, "Poppins", sans-serif);
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Description */
+.dining-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Call to Action Button */
+.dining-cta {
+  align-self: flex-start;
+  padding: 1rem 2.5rem;
+  background-color: #d6b86b;
+  color: #000;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dining-cta:hover {
+  background-color: #c3a458;
+  transform: translateY(-3px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .dining-title {
+    font-size: 2.8rem;
+  }
+  .dining-content-box {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dining-section {
+    justify-content: center;
+    padding: 4rem 5%;
+    min-height: 600px;
+  }
+
+  .dining-content-box {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .dining-title {
+    font-size: 2.3rem;
+  }
+
+  .dining-cta {
+    align-self: center;
+  }
+}

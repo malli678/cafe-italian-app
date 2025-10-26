@@ -1,0 +1,115 @@
+/* src/components/Menu.css */
+.menu-section {
+    padding: 6rem 5%;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.menu-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.menu-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.menu-card {
+    position: relative;
+    overflow: hidden;
+    /* This is crucial for the zoom effect */
+    aspect-ratio: 3 / 4;
+    /* Gives the card a consistent shape */
+    color: var(--color-text-light);
+}
+
+.menu-card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.menu-card:hover .menu-card-bg {
+    transform: scale(1.1);
+}
+
+.menu-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    /* Align content to the bottom */
+    padding: 2rem;
+}
+
+.menu-card-content {
+    text-align: left;
+}
+
+.menu-card-title {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-card-link:hover {
+    color: var(--color-accent);
+}
+
+.menu-footer {
+    margin-top: 4rem;
+}
+
+.menu-main-cta {
+    padding: 1rem 2.5rem;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-main-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+    }
+
+    .menu-title {
+        font-size: 2.5rem;
+    }
+}

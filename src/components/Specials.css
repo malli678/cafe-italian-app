@@ -1,0 +1,153 @@
+/* src/components/Specials.css */
+.specials-section {
+    padding: 6rem 5%;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: var(--color-text-light);
+    overflow: hidden;
+    /* Prevent horizontal scroll from peeking items */
+}
+
+.specials-header {
+    margin-bottom: 4rem;
+    /* Reduced from 140px gap for better balance */
+}
+
+.specials-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.specials-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+}
+
+.specials-title .highlight {
+    color: var(--color-accent);
+}
+
+.carousel-container {
+    position: relative;
+    height: 600px;
+    /* Set a fixed height for the carousel area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease, opacity 0.5s ease, z-index 0s 0.25s;
+}
+
+.item::before {
+    /* The arched background */
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background: #111;
+    border-radius: 200px 200px 0 0;
+    z-index: -1;
+}
+
+/* Active (Center) Item */
+.item.active {
+    transform: translateZ(0);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Previous (Left) Item */
+.item.prev {
+    transform: translateX(-60%) translateZ(-200px) scale(0.8);
+    opacity: 0.3;
+    z-index: 5;
+}
+
+/* Next (Right) Item */
+.item.next {
+    transform: translateX(60%) translateZ(-200px) scale(0.8);
+    opacity: 0.3;
+    z-index: 5;
+}
+
+/* Hidden Items */
+.item.inactive {
+    transform: scale(0.5);
+    opacity: 0;
+    z-index: 1;
+}
+
+.price-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: bold;
+    padding: 1rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* Creates the starburst effect */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.special-image {
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.special-name {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+}
+
+.specials-nav {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.nav-arrow {
+    background: none;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}

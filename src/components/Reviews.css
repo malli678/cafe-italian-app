@@ -1,0 +1,142 @@
+/* src/components/Reviews.css */
+.reviews-section {
+    padding: 6rem 5%;
+    background-color: var(--color-primary);
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.reviews-header {
+    margin-bottom: 4rem;
+}
+
+.reviews-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.reviews-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.reviews-carousel {
+    overflow: hidden;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.reviews-track {
+    display: flex;
+    gap: 24px;
+    /* Gap from Figma */
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    flex: 0 0 calc((100% / 3) - (48px / 3));
+    background-color: #1a1a1a;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: left;
+
+    /* Add smooth transition for transform and shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover / focus effect */
+.review-card:hover,
+.review-card:focus {
+    transform: scale(1.05); /* zoom slightly */
+    box-shadow: 0 0 20px 5px rgba(214, 184, 107, 0.8); /* golden glow */
+    cursor: pointer;
+}
+.review-card:active {
+    transform: scale(1.07);
+    box-shadow: 0 0 30px 8px rgba(214, 184, 107, 1);
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.review-timestamp {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.star-rating {
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.review-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.reviews-nav {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    /* Gap from Figma */
+}
+
+.review-arrow {
+    background: none;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-arrow:hover:not(:disabled) {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.review-arrow:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .review-card {
+        flex: 0 0 calc((100% / 2) - (24px / 2));
+        /* 2 cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        flex: 0 0 100%;
+        /* 1 card */
+    }
+
+    /* Note: a more advanced slider would adjust the transform % dynamically */
+}
